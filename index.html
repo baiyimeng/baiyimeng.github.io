@@ -1,470 +1,458 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta content="IE=7.0000" http-equiv="X-UA-Compatible">
-	<title>Yimeng Bai's Homepage</title>
-	<meta name="description" content="Yimeng Bai, 白移梦, PhD student in University of Science and Technology. Recommender systems, information retrieval.">
-	<meta name="keywords" content="Yimeng Bai, 白移梦, USTC, information retrieval, recommender systems">
-	<link rel="stylesheet" type="text/css" href="./Homepage_files/bym.css">
-	<style>
-		@-moz-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-webkit-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@-o-keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}@keyframes nodeInserted{from{opacity:0.99;}to{opacity:1;}}embed,object{animation-duration:.001s;-ms-animation-duration:.001s;-moz-animation-duration:.001s;-webkit-animation-duration:.001s;-o-animation-duration:.001s;animation-name:nodeInserted;-ms-animation-name:nodeInserted;-moz-animation-name:nodeInserted;-webkit-animation-name:nodeInserted;-o-animation-name:nodeInserted;}
-	</style>
-	<style type="text/css">
-		/* Copyright 2014-present Evernote Corporation. All rights reserved. */
-		@keyframes caretBlink {
-		    from { opacity: 1.0; }
-		    to { opacity: 0.0; }
-		}
-		
-		@keyframes rotateSpinner {
-		    from {
-		        transform:rotate(0deg);
-		    }
-		    to {
-		        transform:rotate(360deg);
-		    }
-		}
-		
-		#text-tool-caret {
-		    animation-name: caretBlink;  
-		    animation-iteration-count: infinite;  
-		    animation-timing-function: cubic-bezier(1.0,0,0,1.0);
-		    animation-duration: 1s; 
-		}
-		
-		#en-markup-loading-spinner {
-		    position: absolute;
-		    top: calc(50% - 16px);
-		    left: calc(50% - 16px);
-		    width: 32px;
-		    height: 32px;
-		}
-		
-		#en-markup-loading-spinner img {
-		    position: relative;
-		    top: 0px;
-		    left: 0px;
-		    animation-name: rotateSpinner;
-		    animation-duration: 0.6s;
-		    animation-iteration-count: infinite;
-		    animation-timing-function: linear;
-		}
-	</style>
-	<style type="text/css">
-		/* Copyright 2014-present Evernote Corporation. All rights reserved. */
-		.skitchToastBoxContainer {
-		    position: absolute;
-		    width: 100%;
-		    text-align: center;
-		    top: 30px;
-		    -webkit-user-select: none;
-		    -moz-user-select: none;
-		    pointer-events: none;
-		}
-		
-		.skitchToastBox {
-		    width: 200px;
-		    height: 16px;
-		    padding: 12px;
-		    background-color: rgba(47, 55, 61, 0.95);
-		    border-radius: 4px;
-		    color: white;
-		    cursor: default;
-		    font-size: 10pt;
-		    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.32);
-		    font-family: 'Soleil', Helvetica, Arial, sans-serif;
-		    border: 2px rgba(255, 255, 255, 0.38) solid;
-		}
-		
-		.lang-zh-cn .skitchToastBox {
-		    font-family: '微软雅黑', 'Microsoft YaHei', SimSun,
-		        '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic', 'Soleil',
-		        Helvetica, Arial, sans-serif;
-		}
-		
-		.lang-ja-jp .skitchToastBox {
-		    font-family: '&#x30E1;&#x30A4;&#x30EA;&#x30AA;', Meiryo, 'MS PGothic',
-		        '微软雅黑', 'Microsoft YaHei', SimSun, 'Soleil', Helvetica, Arial,
-		        sans-serif;
-		}
-		
-		.skitchToast {
-		    padding-left: 20px;
-		    padding-right: 20px;
-		    display: inline-block;
-		    height: 10px;
-		    color: #f1f5f8;
-		    text-align: center;
-		}
-		
-		.skitchVisible {
-		    /* Don't remove this class it's a hack used by the Evernote Clipper */
-		}
-	</style>
-	<style type="text/css">
-		/* Copyright 2014-present Evernote Corporation. All rights reserved. */
-		
-		
-	</style>
-	<style type="text/css">
-		/* Copyright 2019-present Evernote Corporation. All rights reserved. */
-		
-		#en-markup-disabled {
-		    position: fixed;
-		    z-index: 9999;
-		    width: 100%;
-		    height: 100%;
-		    top: 0px;
-		    left: 0px;
-		    cursor: default;
-		    -webkit-user-select: none;
-		}
-		
-		#en-markup-alert-container {
-		    position: absolute;
-		    z-index: 9999;
-		    width: 450px;
-		    left: calc(50% - 225px);
-		    top: calc(50% - 85px);
-		    background-color: white;
-		    box-shadow: 0 2px 7px 1px rgba(0,0,0,0.35);
-		    -webkit-user-select: none;
-		}
-		
-		
-		#en-markup-alert-container .cell-2 {
-		    position: relative;
-		    float: left;
-		    width: 345px;
-		    margin-top: 29px;
-		    margin-bottom: 20px;
-		}
-		
-		#en-markup-alert-container .cell-2 .cell-2-title {
-		    margin-bottom: 5px;
-		    padding-right: 30px;
-		    font-size: 12pt;
-		    font-family: Tahoma, Arial;
-		}
-		
-		#en-markup-alert-container .cell-2 .cell-2-message {
-		    padding-right: 30px;
-		    font-size: 9.5pt;
-		    font-family: Tahoma, Arial;
-		}
-		
-		#en-markup-alert-container .cell-3 {
-		    position: relative;
-		    width: 450px;
-		    height: 60px;
-		    float: left;
-		    background-color: rgb(240,240,240);
-		}
-		
-		#en-markup-alert-container .cell-3 button {
-		    position: absolute;
-		    top: 12px;
-		    right: 15px;
-		    width: 110px;
-		    height: 36px;
-		}
-		
-		#en-markup-alert-container .cell-3 button.alt-button {
-		    position: absolute;
-		    top: 12px;
-		    right: 140px;
-		    width: 110px;
-		    height: 36px;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yimeng Bai's Homepage</title>
+  <meta name="description" content="Yimeng Bai, Ph.D. student at USTC. Research in generative recommendation, LLM personalization, and agentic AI.">
+  <meta name="keywords" content="Yimeng Bai, Bai Yimeng, 白移梦, USTC, recommender systems, generative recommendation, LLM personalization, agentic AI, information retrieval">
+  <style>
+    :root {
+      --bg: #f5f3ee;
+      --paper: #fffdf8;
+      --ink: #202124;
+      --muted: #5e625f;
+      --line: #ddd7ca;
+      --link: #0b5d56;
+      --soft: #f0ece2;
+      --accent: #c51f32;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 22px 48px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      align-items: center;
+      padding: 22px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--accent);
+      border-radius: 3px;
+    }
+
+    .portrait {
+      width: 140px;
+      height: 172px;
+      object-fit: cover;
+      border-radius: 2px;
+      border: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 31px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .bio {
+      max-width: 740px;
+      margin: 8px 0 0;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      padding: 2px 8px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: #33352f;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    section {
+      margin-top: 18px;
+      padding: 18px 22px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--accent);
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      color: #2f312f;
+      font-size: 16px;
+    }
+
+    .news-list {
+      display: grid;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-list li {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .news-list li:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .date {
+      color: var(--accent);
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .paper-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .year-block {
+      margin-top: 12px;
+      padding: 12px 14px 10px;
+      background: #fbf8f1;
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--accent);
+      border-radius: 3px;
+    }
+
+    .year-block:first-of-type {
+      margin-top: 0;
+    }
+
+    .paper {
+      padding: 10px 0 11px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .paper:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .paper-title {
+      margin: 0;
+      font-weight: 700;
+      color: #182235;
+    }
+
+    .authors,
+    .venue {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .venue strong {
+      color: #2b3545;
+    }
+
+    .paper-links {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin: 0 0 0 8px;
+      font-size: 13px;
+      vertical-align: baseline;
+    }
+
+    .paper-links a {
+      font-weight: 650;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 8px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 185px 1fr;
+      gap: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    .timeline-item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .time {
+      color: var(--accent);
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .item-title {
+      font-weight: 700;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .page {
+        padding: 14px 12px 34px;
+      }
+
+      .hero,
+      .news-list li,
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      section {
+        padding: 16px;
+      }
+
+      .portrait {
+        width: 138px;
+        height: 170px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 <body>
-	<div id="content">
-		<!-- ================= News ================= -->
-		<div id="news">
-			<h2>News</h2><br>
-			<font size="3px">
-				<b> 16 May 2026</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://kdd2026.kdd.org//" ,="" target="_blank"> KDD 2026 </a> on latent reasoning. </span><br><br>
-				<b> 3 Apr 2026</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://sigir2026.org/en-AU/" ,="" target="_blank"> SIGIR 2026 </a> on generative recommendation. </span><br><br>
-				<b> 16 May 2025</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://2025.aclweb.org/" ,="" target="_blank"> ACL 2025 </a> on LLM personalization. </span><br><br>
-				<b> 5 Apr 2025</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://sigir2025.dei.unipd.it/index.html" ,="" target="_blank"> SIGIR 2025 </a> on calibration. </span><br><br>
-				<b> 23 Sep 2024</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://dl.acm.org/journal/tors/" ,="" target="_blank"> ACM TORS </a> on recommendation unlearning. </span><br><br>
-				<b> 17 May 2024</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://kdd2024.kdd.org/" ,="" target="_blank"> KDD 2024 </a> on multi-task learning for recommendation. </span><br><br>
-				<b> 20 Oct 2023</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://www.wsdm-conference.org/2024/" ,="" target="_blank"> WSDM 2024 </a> about label learning for short video recommendation. </span><br><br>
-				<b> 5 Aug 2023</b><br>
-				<span class="easylink"> One paper is accepted by <a href="https://uobevents.eventsair.com/cikm2023//" ,="" target="_blank"> CIKM 2023 </a> about label debiasing for short video recommendation. </span><br><br>
-		</div>
+  <main class="page">
+    <header class="hero">
+      <img class="portrait" src="https://baiyimeng.github.io/Homepage_files/baiyimeng_2024.jpg" alt="Yimeng Bai">
+      <div>
+        <h1>Yimeng Bai</h1>
+        <p class="subtitle">Ph.D. Student, Lab for Data Science, University of Science and Technology of China</p>
+        <p class="bio">
+          I am a final-year Ph.D. student at <a href="http://data-science.ustc.edu.cn/" target="_blank" rel="noopener">Lab for Data Science, USTC</a>,
+          advised by <a href="https://fulifeng.github.io/" target="_blank" rel="noopener">Prof. Fuli Feng</a> and mentored by
+          <a href="https://zyang1580.github.io/" target="_blank" rel="noopener">Dr. Yang Zhang</a>. My research focuses on generative recommendation,
+          LLM personalization, and agentic AI.
+        </p>
+        <div class="chips">
+          <span class="chip">Generative Recommendation</span>
+          <span class="chip">LLM Personalization</span>
+          <span class="chip">Agentic AI</span>
+        </div>
+        <div class="links">
+          <span>Email: <a href="mailto:baiyimeng77@gmail.com">baiyimeng77@gmail.com</a></span>
+          <a href="https://github.com/baiyimeng" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=pKflCMAAAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://dblp.org/pid/255/1013" target="_blank" rel="noopener">DBLP</a>
+          <a href="https://orcid.org/0009-0008-8874-9409" target="_blank" rel="noopener">ORCID</a>
+        </div>
+      </div>
+    </header>
 
-		<!-- ================= Profile ================= -->
-		<div id="left">
-			<table style="background-color:white;">
-				<tbody>
-					<tr nosave="">
-						<td valign="CENTER">
-							<img src="./Homepage_files/baiyimeng_2024.jpg" height="200" align="left">
-						</td>
-						<td valign="CENTER" width="2%">
-						</td>
-						<td valign="CENTER" halign="LEFT">
-							<font size="+0">
-								<b>
-									<font size="+2">Yimeng Bai&nbsp;</font>
-								</b>
-								</p>
-								<p style="margin-left:0px;">
-								</p><a style="margin-left:0px;"> Email: baiyimeng77@gmail.com<br> &bull; <a href="https://github.com/baiyimeng">GitHub</a> &bull; <a href="https://scholar.google.com/citations?user=pKflCMAAAAAJ&hl=zh-CN&oi=sra"> Google Scholar</a> <br> &bull; <a
-										href="https://dblp.org/pid/255/1013">DBLP</a> &bull; <a href="https://orcid.org/0009-0008-8874-9409"> ORCID</a> <br>
-									</p>
-							</font>
-							<p>
-								<font size="+0">
-								</font>
-							</p>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="box"> I am currently in the final year of my PhD program at <a href="http://data-science.ustc.edu.cn/" ,="" target="_blank">Lab for Data Science, USTC</a>, with a research focus on generative recommendation, and LLM personalization. <br><br>
+    <section>
+      <h2>News</h2>
+      <ul class="news-list">
+        <li><span class="date">16 May 2026</span><span>One paper is accepted by <a href="https://kdd2026.kdd.org/" target="_blank" rel="noopener">KDD 2026</a> on latent reasoning.</span></li>
+        <li><span class="date">3 Apr 2026</span><span>One paper is accepted by <a href="https://sigir2026.org/en-AU/" target="_blank" rel="noopener">SIGIR 2026</a> on generative recommendation.</span></li>
+      </ul>
+    </section>
 
-				<!-- ================= Education ================= -->
-				<h2 style="CLEAR: both;">Education</h2>
-				<table>
-					<tbody>
-						<tr>
-							<td><span class="title">University of Science and Technology of China (USTC)</span> <br> PhD student in Cyber Science and Technology &nbsp;&nbsp;&nbsp; Sep. 2022 - Now, Hefei, China <br> Advisor: <a href="https://fulifeng.github.io/" target="_blank">Prof. Fuli Feng
-									&nbsp;&nbsp; </a> Mentor: <a href="https://zyang1580.github.io/" target="_blank"> Dr. Yang Zhang</a>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<table>
-					<tbody>
-						<tr>
-							<td><span class="title"> Beijing Jiaotong University (BJTU)</span> <br> Bachelor in Science &nbsp;&nbsp;&nbsp; Sep. 2018 - Jun. 2022, Beijing, China <br>
-							</td>
-						</tr>
-					</tbody>
-				</table>
+    <section>
+      <h2>Experience & Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="time">Sep. 2024 - Jun. 2026</div>
+          <div><span class="item-title">Research Intern, ByteDance</span><br><span class="small">TikTok-Data-Rec Core. Mentor: <a href="https://ieeexplore.ieee.org/author/37087004955" target="_blank" rel="noopener">Shaohui Ruan</a>.</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">Dec. 2022 - Aug. 2024</div>
+          <div><span class="item-title">Research Intern, Kuaishou</span><br><span class="small">Mentor: <a href="https://scholar.google.com/citations?user=BhggrK4AAAAJ&hl=zh-CN&oi=sra" target="_blank" rel="noopener">Dr. Jing Lu</a>.</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">Sep. 2022 - Present</div>
+          <div><span class="item-title">Ph.D. Student, University of Science and Technology of China</span><br><span class="small">Cyber Science and Technology, Hefei, China.</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="time">Sep. 2018 - Jun. 2022</div>
+          <div><span class="item-title">B.S., Beijing Jiaotong University</span><br><span class="small">Beijing, China.</span></div>
+        </div>
+      </div>
+    </section>
 
-				<!-- ================= Experiences ================= -->
-				<h2 style="CLEAR: both">Experiences</h2>
-				<table>
-					<tbody>
-						<tr>
-							<td> <span class="title">Research Intern</span>, Kuaishou, Dec. 2022 - Aug. 2024 <br> Mentor: <a href="https://scholar.google.com/citations?user=BhggrK4AAAAJ&hl=zh-CN&oi=sra" target="_blank">Dr. Jing Lu &nbsp; </td>
-						</tr>
-					</tbody>
-				</table>
-				<table>
-					<tbody>
-						<tr>
-							<td> <span class="title">Research Intern</span>, ByteDance (TikTok-Data-Rec Core), Sep. 2024 - Jun. 2026 <br> Mentor: <a href="https://ieeexplore.ieee.org/author/37087004955" target="_blank">Shaohui Ruan &nbsp; </td>
-						</tr>
-					</tbody>
-				</table>
+    <section>
+      <h2>Publications</h2>
+      <div class="year-block">
+        <h3>2026</h3>
+        <div class="paper-list">
+          <article class="paper">
+            <p class="paper-title">SODA: Semantic-Oriented Distributional Alignment for Generative Recommendation</p>
+            <p class="authors">Ziqi Xue, Dingxian Wang, <strong>Yimeng Bai</strong>, Shuai Zhu, Jialei Li, Xiaoyan Zhao, Frank Yang, Andrew Rabinovich, Yang Zhang, Pablo N. Mendes</p>
+            <p class="venue"><strong>RecSys 2026</strong>, Short Paper, Acceptance Rate: 17.8% <span class="paper-links"><a href="https://arxiv.org/abs/2603.00700" target="_blank" rel="noopener">pdf</a></span></p>
+          </article>
+          <article class="paper">
+            <p class="paper-title">Intuition-Guided Latent Reasoning for LLM-Based Recommendation</p>
+            <p class="authors">Chang Liu, <strong>Yimeng Bai</strong>, Xiaoyan Zhao, Yang Zhang, Qifan Wang, Fuli Feng, Wenge Rong</p>
+            <p class="venue"><strong>KDD 2026</strong>, Research Track, Acceptance Rate: 18.5% <span class="paper-links"><a href="https://arxiv.org/pdf/2606.27684" target="_blank" rel="noopener">pdf</a><a href="https://github.com/Ten-Mao/IntuRec" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+          <article class="paper">
+            <p class="paper-title">Bi-Level Optimization for Generative Recommendation: Bridging Tokenization and Generation</p>
+            <p class="authors"><strong>Yimeng Bai</strong>, Chang Liu, Yang Zhang, Dingxian Wang, Frank Yang, Andrew Rabinovich, Wenge Rong, Fuli Feng</p>
+            <p class="venue"><strong>SIGIR 2026</strong>, Full Paper, Acceptance Rate: 18.4% <span class="paper-links"><a href="https://arxiv.org/abs/2510.21242" target="_blank" rel="noopener">pdf</a><a href="https://github.com/Ten-Mao/BLOGER" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+        </div>
+      </div>
 
-				<!-- ================= Preprints ================= -->
-				<div id="papers">
-					<h2>Preprints</h2>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2601.20199" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">MERGE: Next-Generation Item Indexing Paradigm for Large-Scale Streaming Recommendation</span>
-									<br>Jing Yan, Yimeng Bai, Zongyu Liu, Yahui Liu, Junwei Wang, Jingze Huang, Haoda Li, Sihao Ding, Shaohui Ruan, Yang Zhang <br> ArXiv 2026.
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2601.17438" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">UniGRec: Unified Generative Recommendation with Soft Identifiers for End-to-End Optimization</span>
-									<br>Jialei Li, Yang Zhang, Yimeng Bai, Shuai Zhu, Ziqi Xue, Xiaoyan Zhao, Dingxian Wang, Frank Yang, Andrew Rabinovich, Xiangnan He <br> ArXiv 2026. &nbsp;&nbsp; <a href="https://github.com/Jialei-03/UniGRec" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2511.15389" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Unveiling Inference Scaling for Difference-Aware User Modeling in LLM Personalization</span>
-									<br>Suyu Chen, Yimeng Bai, Yulong Huang, Xiaoyan Zhao, Yang Zhang <br> ArXiv 2025. &nbsp;&nbsp; <a href="https://github.com/Chen-Suyu/DRP" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2507.06121" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Brownian Bridge Diffusion for Sequential Recommendation</span>
-									<br>Yimeng Bai, Yang Zhang, Sihao Ding, Shaohui Ruan, Han Yao, Fuli Feng, Tat-Seng Chua <br> ArXiv 2025. &nbsp;&nbsp; <a href="https://github.com/baiyimeng/BBDRec" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2506.15576" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">DiscRec: Disentangled Semantic-Collaborative Modeling for Generative Recommendation</span>
-									<br>Chang Liu, Yimeng Bai, Xiaoyan Zhao, Yang Zhang, Fuli Feng, Wenge Rong <br> ArXiv 2025. &nbsp;&nbsp; <a href="https://github.com/Ten-Mao/DiscRec" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2410.22809" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Causality-Enhanced Behavior Sequence Modeling in LLMs for Personalized Recommendation</span>
-									<br>Yang Zhang, Juntao You, Yimeng Bai, Jizhi Zhang, Keqin Bao, Wenjie Wang, Tat-Seng Chua <br> ArXiv 2024. &nbsp;&nbsp; <a href="https://github.com/juntaoyou/CFT" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
+      <div class="year-block">
+        <h3>2025</h3>
+        <div class="paper-list">
+          <article class="paper">
+            <p class="paper-title">DuST: Dual-Stage Tuning of LLMs for Next-Post-Topic Prediction in Social Media Bots</p>
+            <p class="authors">Yulong Huang, <strong>Yimeng Bai</strong>, Yang Zhang, Fuli Feng, Haoyan Liu, Chongming Gao</p>
+            <p class="venue">The 1st Workshop on LLM Agents for Social Simulation, <strong>CIKM 2025</strong> <span class="paper-links"><a href="https://openreview.net/pdf?id=5vbnXkGc3Z" target="_blank" rel="noopener">pdf</a></span></p>
+          </article>
+          <article class="paper">
+            <p class="paper-title">Measuring What Makes You Unique: Difference-Aware User Modeling for Enhancing LLM Personalization</p>
+            <p class="authors">Yilun Qiu, Xiaoyan Zhao, Yang Zhang, <strong>Yimeng Bai</strong>, Wenjie Wang, Hong Cheng, Fuli Feng, Tat-Seng Chua</p>
+            <p class="venue"><strong>ACL 2025 Findings</strong> <span class="paper-links"><a href="https://arxiv.org/abs/2503.02450" target="_blank" rel="noopener">pdf</a><a href="https://github.com/SnowCharmQ/DPL" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+          <article class="paper">
+            <p class="paper-title">Unconstrained Monotonic Calibration of Predictions in Deep Ranking Systems</p>
+            <p class="authors"><strong>Yimeng Bai</strong>, Shunyu Zhang, Yang Zhang, Hu Liu, Wentian Bao, Enyun Yu, Fuli Feng, Wenwu Ou</p>
+            <p class="venue"><strong>SIGIR 2025</strong>, Full Paper, Acceptance Rate: 21.5% <span class="paper-links"><a href="https://arxiv.org/abs/2504.14243" target="_blank" rel="noopener">pdf</a><a href="https://github.com/baiyimeng/UMC" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+        </div>
+      </div>
 
-					<!-- ================= Publications ================= -->
-					<h2>Publications</h2>
-					</br>
-					<b> In the Year of 2026: </b> </br></br>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2603.00700" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">SODA: Semantic-Oriented Distributional Alignment for Generative Recommendation</span>
-									<br>Ziqi Xue, Dingxian Wang, Yimeng Bai, Shuai Zhu, Jialei Li, Xiaoyan Zhao, Frank Yang, Andrew Rabinovich, Yang Zhang, Pablo N. Mendes <br> RecSys 2026 (Short Paper, Acceptance Rate: 17.8%).
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/pdf/2606.27684" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Intuition-Guided Latent Reasoning for LLM-Based Recommendation</span>
-									<br>Chang Liu, Yimeng Bai, Xiaoyan Zhao, Yang Zhang, Qifan Wang, Fuli Feng, Wenge Rong <br> KDD 2026 (Research Track, Acceptance Rate: 18.5%). &nbsp;&nbsp; <a href="https://github.com/Ten-Mao/IntuRec" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2510.21242" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Bi-Level Optimization for Generative Recommendation: Bridging Tokenization and Generation</span>
-									<br>Yimeng Bai, Chang Liu, Yang Zhang, Dingxian Wang, Frank Yang, Andrew Rabinovich, Wenge Rong, Fuli Feng <br> SIGIR 2026 (Full Paper, Acceptance Rate: 18.4%). &nbsp;&nbsp; <a href="https://github.com/Ten-Mao/BLOGER" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<b> In the Year of 2025: </b> </br></br>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://openreview.net/pdf?id=5vbnXkGc3Z" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">DuST: Dual-Stage Tuning of LLMs for Next-Post-Topic Prediction in Social Media Bots</span>
-									<br>Yulong Huang, Yimeng Bai, Yang Zhang, Fuli Feng, Haoyan Liu, Chongming Gao <br> The 1st Workshop on LLM Agents for Social Simulation (CIKM 2025).
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2503.02450" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Measuring What Makes You Unique: Difference-Aware User Modeling for Enhancing LLM Personalization</span>
-									<br>Yilun Qiu, Xiaoyan Zhao, Yang Zhang, Yimeng Bai, Wenjie Wang, Hong Cheng, Fuli Feng, Tat-Seng Chua <br> ACL 2025 (Findings). &nbsp;&nbsp; <a href="https://github.com/SnowCharmQ/DPL" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2504.14243" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Unconstrained Monotonic Calibration of Predictions in Deep Ranking Systems</span>
-									<br>Yimeng Bai, Shunyu Zhang, Yang Zhang, Hu Liu, Wentian Bao, Enyun Yu, Fuli Feng, Wenwu Ou <br> SIGIR 2025 (Full Paper, Acceptance Rate: 21.5%). &nbsp;&nbsp; <a href="https://github.com/baiyimeng/UMC" target="_blank">Codes</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<b> In the Year of 2024: </b> </br></br>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2307.02147" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Recommendation Unlearning via Influence Function</span>
-									<br>Yang Zhang, Zhiyu Hu, Yimeng Bai, Jiancan Wu, Qifan Wang, Fuli Feng <br> ACM TORS (Original Research). &nbsp;&nbsp; <a href="https://github.com/baiyimeng/IFRU" target="_blank">Codes&nbsp;&nbsp;
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2407.19682" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">GradCraft: Elevating Multi-task Recommendations through Holistic Gradient Crafting</span>
-									<br>Yimeng Bai, Yang Zhang, Fuli Feng, Jing Lu, Xiaoxue Zang, Chenyi Lei, Yang Song <br>KDD 2024 (Applied Data Science Track, Acceptance Rate: 20%) &nbsp;&nbsp; <a href="https://github.com/baiyimeng/GradCraft" target="_blank">Codes</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2312.10947" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">LabelCraft: Empowering Short Video Recommendations with Automated Label Crafting</span>
-									<br>Yimeng Bai, Yang Zhang, Jing Lu, Jianxin Chang, Xiaoxue Zang, Yanan Niu, Yang Song, Fuli Feng <br> WSDM 2024 (Poster, Acceptance Rate: 18%). &nbsp;&nbsp; <a href="https://github.com/baiyimeng/LabelCraft" target="_blank">Codes</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<b> In the Year of 2023: </b> </br></br>
-					<table>
-						<tbody>
-							<tr>
-								<td class="left"><a href="https://arxiv.org/abs/2306.17426" target="_blank"><img src="./Homepage_files/pdf.gif"><br>pdf</a></td>
-								<td><span class="title">Leveraging Watch-time Feedback for Short-Video Recommendations: A Causal Labeling Framework</span>
-									<br>Yang Zhang, Yimeng Bai, Jianxin Chang, Xiaoxue Zang, Song Lu, Jing Lu, Fuli Feng, Yanan Niu, Yang Song <br> CIKM 2023 (Applied Research Paper, Acceptance Rate: 32%). &nbsp;&nbsp; <a href="https://github.com/baiyimeng/DML" target="_blank">Codes</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<!-- ================= Awards ================= -->
-					<h2 style="clear: both;">Awards</h2>
-					<table>
-						<tr>
-							<td>
-								<span class="title">National Scholarship, 2024</span><br> - USTC, China
-							</td>
-						</tr>
-					</table>
-					<!-- ================= Professional Services ================= -->
-					<h2 style="clear: both;">Professional Services</h2>
-					<table>
-						<tr>
-							<td> AC/SPC: <span class="title">KDD 2026 (ADS, Cycle 1);</span>
-							</td>
-						</tr>
-					</table>
-					<table>
-						<tr>
-							<td> Reviewer: <span class="title">KDD 2025 (ADS, Cycle 2); WWW 2026 (Industry); KDD 2026 (ADS, Cycle 1–2); KDD 2026 (Research, Cycle 2); SIGIR 2026; NeurIPS 2026; KDD 2027 (Research, Cycle 1);</span>
-							</td>
-						</tr>
-					</table>
-				</div>
+      <div class="year-block">
+        <h3>2024</h3>
+        <div class="paper-list">
+          <article class="paper">
+            <p class="paper-title">Recommendation Unlearning via Influence Function</p>
+            <p class="authors">Yang Zhang, Zhiyu Hu, <strong>Yimeng Bai</strong>, Jiancan Wu, Qifan Wang, Fuli Feng</p>
+            <p class="venue"><strong>ACM TORS</strong>, Original Research <span class="paper-links"><a href="https://arxiv.org/abs/2307.02147" target="_blank" rel="noopener">pdf</a><a href="https://github.com/baiyimeng/IFRU" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+          <article class="paper">
+            <p class="paper-title">GradCraft: Elevating Multi-task Recommendations through Holistic Gradient Crafting</p>
+            <p class="authors"><strong>Yimeng Bai</strong>, Yang Zhang, Fuli Feng, Jing Lu, Xiaoxue Zang, Chenyi Lei, Yang Song</p>
+            <p class="venue"><strong>KDD 2024</strong>, Applied Data Science Track, Acceptance Rate: 20% <span class="paper-links"><a href="https://arxiv.org/abs/2407.19682" target="_blank" rel="noopener">pdf</a><a href="https://github.com/baiyimeng/GradCraft" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+          <article class="paper">
+            <p class="paper-title">LabelCraft: Empowering Short Video Recommendations with Automated Label Crafting</p>
+            <p class="authors"><strong>Yimeng Bai</strong>, Yang Zhang, Jing Lu, Jianxin Chang, Xiaoxue Zang, Yanan Niu, Yang Song, Fuli Feng</p>
+            <p class="venue"><strong>WSDM 2024</strong>, Poster, Acceptance Rate: 18% <span class="paper-links"><a href="https://arxiv.org/abs/2312.10947" target="_blank" rel="noopener">pdf</a><a href="https://github.com/baiyimeng/LabelCraft" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+        </div>
+      </div>
+
+      <div class="year-block">
+        <h3>2023</h3>
+        <div class="paper-list">
+          <article class="paper">
+            <p class="paper-title">Leveraging Watch-time Feedback for Short-Video Recommendations: A Causal Labeling Framework</p>
+            <p class="authors">Yang Zhang, <strong>Yimeng Bai</strong>, Jianxin Chang, Xiaoxue Zang, Song Lu, Jing Lu, Fuli Feng, Yanan Niu, Yang Song</p>
+            <p class="venue"><strong>CIKM 2023</strong>, Applied Research Paper, Acceptance Rate: 32% <span class="paper-links"><a href="https://arxiv.org/abs/2306.17426" target="_blank" rel="noopener">pdf</a><a href="https://github.com/baiyimeng/DML" target="_blank" rel="noopener">code</a></span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Preprints</h2>
+      <div class="paper-list">
+        <article class="paper">
+          <p class="paper-title">MERGE: Next-Generation Item Indexing Paradigm for Large-Scale Streaming Recommendation</p>
+          <p class="authors">Jing Yan, <strong>Yimeng Bai</strong>, Zongyu Liu, Yahui Liu, Junwei Wang, Jingze Huang, Haoda Li, Sihao Ding, Shaohui Ruan, Yang Zhang</p>
+          <p class="venue">ArXiv 2026 <span class="paper-links"><a href="https://arxiv.org/abs/2601.20199" target="_blank" rel="noopener">pdf</a></span></p>
+        </article>
+        <article class="paper">
+          <p class="paper-title">UniGRec: Unified Generative Recommendation with Soft Identifiers for End-to-End Optimization</p>
+          <p class="authors">Jialei Li, Yang Zhang, <strong>Yimeng Bai</strong>, Shuai Zhu, Ziqi Xue, Xiaoyan Zhao, Dingxian Wang, Frank Yang, Andrew Rabinovich, Xiangnan He</p>
+          <p class="venue">ArXiv 2026 <span class="paper-links"><a href="https://arxiv.org/abs/2601.17438" target="_blank" rel="noopener">pdf</a><a href="https://github.com/Jialei-03/UniGRec" target="_blank" rel="noopener">code</a></span></p>
+        </article>
+        <article class="paper">
+          <p class="paper-title">Unveiling Inference Scaling for Difference-Aware User Modeling in LLM Personalization</p>
+          <p class="authors">Suyu Chen, <strong>Yimeng Bai</strong>, Yulong Huang, Xiaoyan Zhao, Yang Zhang</p>
+          <p class="venue">ArXiv 2025 <span class="paper-links"><a href="https://arxiv.org/abs/2511.15389" target="_blank" rel="noopener">pdf</a><a href="https://github.com/Chen-Suyu/DRP" target="_blank" rel="noopener">code</a></span></p>
+        </article>
+        <article class="paper">
+          <p class="paper-title">Brownian Bridge Diffusion for Sequential Recommendation</p>
+          <p class="authors"><strong>Yimeng Bai</strong>, Yang Zhang, Sihao Ding, Shaohui Ruan, Han Yao, Fuli Feng, Tat-Seng Chua</p>
+          <p class="venue">ArXiv 2025 <span class="paper-links"><a href="https://arxiv.org/abs/2507.06121" target="_blank" rel="noopener">pdf</a><a href="https://github.com/baiyimeng/BBDRec" target="_blank" rel="noopener">code</a></span></p>
+        </article>
+        <article class="paper">
+          <p class="paper-title">DiscRec: Disentangled Semantic-Collaborative Modeling for Generative Recommendation</p>
+          <p class="authors">Chang Liu, <strong>Yimeng Bai</strong>, Xiaoyan Zhao, Yang Zhang, Fuli Feng, Wenge Rong</p>
+          <p class="venue">ArXiv 2025 <span class="paper-links"><a href="https://arxiv.org/abs/2506.15576" target="_blank" rel="noopener">pdf</a><a href="https://github.com/Ten-Mao/DiscRec" target="_blank" rel="noopener">code</a></span></p>
+        </article>
+        <article class="paper">
+          <p class="paper-title">Causality-Enhanced Behavior Sequence Modeling in LLMs for Personalized Recommendation</p>
+          <p class="authors">Yang Zhang, Juntao You, <strong>Yimeng Bai</strong>, Jizhi Zhang, Keqin Bao, Wenjie Wang, Tat-Seng Chua</p>
+          <p class="venue">ArXiv 2024 <span class="paper-links"><a href="https://arxiv.org/abs/2410.22809" target="_blank" rel="noopener">pdf</a><a href="https://github.com/juntaoyou/CFT" target="_blank" rel="noopener">code</a></span></p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Awards & Professional Services</h2>
+      <p><strong>National Scholarship</strong>, USTC, China, 2024.</p>
+      <p><strong>AC/SPC:</strong> KDD 2026 ADS, Cycle 1.</p>
+      <p><strong>Reviewer:</strong> KDD 2025 ADS, Cycle 2; WWW 2026 Industry; KDD 2026 ADS, Cycle 1-2; KDD 2026 Research, Cycle 2; SIGIR 2026; NeurIPS 2026; KDD 2027 Research, Cycle 1.</p>
+    </section>
+  </main>
 </body>
 </html>
